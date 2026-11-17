@@ -69,7 +69,7 @@ setup-playit:
 		-w /workspace \
 		-e TOKEN="$(TOKEN)" \
 		python:3.12-slim \
-		python scripts/setup_playit.py
+		python scripts/setup-playit.py
 	docker compose config --quiet
 	docker compose up -d --force-recreate playit
 	@echo "Playit agent configured and started."
@@ -100,7 +100,7 @@ create-server:
 		-e MAX_THREADS="$(MAX_THREADS)" \
 		-e LEVEL_SEED="$(LEVEL_SEED)" \
 		$(PYTHON_IMAGE) \
-		sh -ec 'pip install --quiet ruamel.yaml && python scripts/create_server.py'
+		sh -ec 'pip install --quiet ruamel.yaml && python scripts/create-server.py'
 
 	@echo "Validating generated Compose configuration..."
 	docker compose config --quiet

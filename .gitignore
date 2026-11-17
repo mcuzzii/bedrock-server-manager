@@ -1,4 +1,5 @@
 data/
+waterdog/
 __pycache__/
 *.py[cod]
 .env

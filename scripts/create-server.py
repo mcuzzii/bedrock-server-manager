@@ -63,7 +63,7 @@ TEMPLATES = {
         },
         "command": ["python", "/prep.py"],
         "volumes": [
-            "./endstone/__NAME__:/data",
+            "./endstone/data/__NAME__:/data",
             "./scripts/prep.py:/prep.py:ro",
         ],
         "restart": "no",
@@ -82,7 +82,7 @@ TEMPLATES = {
             "TZ": "Asia/Manila",
         },
         "volumes": [
-            "./endstone/__NAME__:/data",
+            "./endstone/data/__NAME__:/data",
         ],
         "networks": ["minecraft"],
         "stdin_open": True,
