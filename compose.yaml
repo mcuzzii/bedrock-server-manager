@@ -4,7 +4,7 @@ services:
     profiles: ["tools"]
     working_dir: /workspace
     volumes:
-      - ./:/workspace
+    - ./:/workspace
     command: ["python", "scripts/setup-playit.py"]
     restart: "no"
   create-server-tool:
@@ -12,13 +12,13 @@ services:
     profiles: ["tools"]
     working_dir: /workspace
     volumes:
-      - ./:/workspace
+    - ./:/workspace
     command:
-      - sh
-      - -ec
-      - |
-        pip install --quiet ruamel.yaml
-        python scripts/create-server.py
+    - sh
+    - -ec
+    - |
+      pip install --quiet ruamel.yaml
+      python scripts/create-server.py
     restart: "no"
   playit:
     image: ghcr.io/playit-cloud/playit-agent:latest
@@ -27,7 +27,7 @@ services:
       SECRET_KEY: ${PLAYIT_SECRET_KEY:?Set PLAYIT_SECRET_KEY in .env}
     networks:
     - minecraft
-  
+
 networks:
   minecraft:
     driver: bridge

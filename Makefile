@@ -80,7 +80,7 @@ stop:
 
 start-server:
 	@test -n "$(NAME)" || (echo "ERROR: specify NAME=<server-name>"; exit 1)
-	docker compose up -d "$(NAME)-waterdog"
+	docker compose up -d playit "$(NAME)-waterdog"
 
 stop-server:
 	@test -n "$(NAME)" || (echo "ERROR: specify NAME=<server-name>"; exit 1)
