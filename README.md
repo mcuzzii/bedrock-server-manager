@@ -39,11 +39,3 @@ make start-server NAME=your-server-name
 ```bash
 make stop
 ```
-
-## Configure Gamerules
-
-```bash
-make configure-gamerules NAME=your-server-name \
-    SHOW_COORDINATES=true \
-    SHOW_DAYS_PLAYED=true
-```
