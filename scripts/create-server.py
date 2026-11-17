@@ -313,7 +313,7 @@ def main():
             + ", ".join(sorted(conflicts))
         )
 
-    data_dir = ROOT / "endstone" / NAME
+    data_dir = ROOT / "endstone" / "data" / NAME
     waterdog_dir = ROOT / "waterdog" / NAME
 
     for directory in (data_dir, waterdog_dir):
