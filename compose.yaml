@@ -1,0 +1,12 @@
+services:
+  playit:
+    image: ghcr.io/playit-cloud/playit-agent:latest
+    container_name: endstone-test-playit
+    environment:
+      SECRET_KEY: ${PLAYIT_SECRET_KEY:?Set PLAYIT_SECRET_KEY in .env}
+    networks:
+      - minecraft
+
+networks:
+  minecraft:
+    driver: bridge
