@@ -18,7 +18,7 @@ LEVEL_SEED ?=
 setup-playit:
 	@test -n "$(TOKEN)" || (echo "ERROR: specify TOKEN=<playit-secret-key>"; exit 1)
 
-	docker compose run --rm --no-deps \
+	PLAYIT_SECRET_KEY="$(TOKEN)" docker compose run --rm --no-deps \
 		-e TOKEN="$(TOKEN)" \
 		setup-playit-tool
 
